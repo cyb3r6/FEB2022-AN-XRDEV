@@ -20,7 +20,7 @@ public class Gun : XRGrabInteractable
         audioSource = GetComponent<AudioSource>();
     }
 
-    private void FireProjectile(ActivateEventArgs ars)
+    private void FireProjectile(ActivateEventArgs args)
     {
         // create a projectile in the scene at a position and rotation
         Rigidbody laser = Instantiate(projectilePrefab, spawnPoint.position, spawnPoint.rotation);
