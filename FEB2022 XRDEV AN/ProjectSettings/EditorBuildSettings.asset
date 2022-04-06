@@ -6,8 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
+    path: Assets/08-IntroToARFoundations/Scenes/ARRobots.unity
+    guid: e3dbb2872b46ad0478cd11bf859fbe49
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: cdadee49a829bb441bbf6e9fc514b673, type: 2}
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 6266de76007b8234f8fa37df70e988d1, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 491a7a8165087e048b0ea0e08cf5edc6, type: 2}
