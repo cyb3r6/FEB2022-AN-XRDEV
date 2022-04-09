@@ -6,18 +6,18 @@ public class RobotTouchController : MonoBehaviour
 {
     public float moveSpeed = 30f;
     public float turnSpeed = 5f;
-    
+
     private Joystick joystick;
     private Rigidbody robotRigidbody;
     private Animator robotAnim;
-    
+
     void OnEnable()
     {
         joystick = FindObjectOfType<Joystick>();
         robotRigidbody = GetComponent<Rigidbody>();
         robotAnim = GetComponent<Animator>();
-
         robotAnim.SetBool("Open_Anim", true);
+
     }
 
     
@@ -42,5 +42,10 @@ public class RobotTouchController : MonoBehaviour
             // set idle robot animation
             robotAnim.SetBool("Walk_Anim", false);
         }
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.instance.LoseLives();
     }
 }
