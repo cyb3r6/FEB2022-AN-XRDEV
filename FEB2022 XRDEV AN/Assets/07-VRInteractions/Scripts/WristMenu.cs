@@ -49,7 +49,7 @@ public class WristMenu : MonoBehaviour
     }
     private void DisplayLocomotionUI()
     {
-        paintSelectionActive = !paintSelectionActive;
-        paintUI.SetActive(paintSelectionActive);
+        locomotionSelectionActive = !locomotionSelectionActive;
+        locomotionUI.SetActive(paintSelectionActive);
     }
 }
