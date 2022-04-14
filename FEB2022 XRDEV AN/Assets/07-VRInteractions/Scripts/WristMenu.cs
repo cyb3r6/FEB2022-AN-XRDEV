@@ -7,19 +7,24 @@ using UnityEngine.InputSystem;
 public class WristMenu : MonoBehaviour
 {
     public GameObject paintUI;
+    public GameObject locomotionUI;
     public InputActionReference paintSelectionToggleReference;
+    public InputActionReference locomotionSelectionToggleReference;
 
     private bool paintSelectionActive = false;
+    private bool locomotionSelectionActive = false;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         paintSelectionToggleReference.action.performed += PrimaryButtonPressed;
+        locomotionSelectionToggleReference.action.performed += SecondaryButtonPressed ;
     }
 
     private void OnDestroy()
     {
         paintSelectionToggleReference.action.performed -= PrimaryButtonPressed;
+        locomotionSelectionToggleReference.action.performed -= SecondaryButtonPressed;
     }
 
     public void PrimaryButtonPressed(InputAction.CallbackContext context)
@@ -29,8 +34,20 @@ public class WristMenu : MonoBehaviour
             DisplayPaintUI();
         }
     }
+    public void SecondaryButtonPressed(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            DisplayLocomotionUI();
+        }
+    }
 
     private void DisplayPaintUI()
+    {
+        paintSelectionActive = !paintSelectionActive;
+        paintUI.SetActive(paintSelectionActive);
+    }
+    private void DisplayLocomotionUI()
     {
         paintSelectionActive = !paintSelectionActive;
         paintUI.SetActive(paintSelectionActive);
